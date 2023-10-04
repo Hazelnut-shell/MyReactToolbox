@@ -9,7 +9,7 @@ const NavLinks = props => {
     <ul className="nav-links">
       <li>
         <NavLink to="/" exact>
-          Splash Page
+          Home Page
         </NavLink>
       </li>
       <li>
@@ -20,6 +20,9 @@ const NavLinks = props => {
       </li>
       <li>
         <NavLink to="/form">Form</NavLink>
+      </li>
+      <li>
+        <NavLink to="/game">Game</NavLink>
       </li>
     </ul>
   );
