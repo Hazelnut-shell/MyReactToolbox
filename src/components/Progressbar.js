@@ -1,13 +1,24 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
+
 import './Progressbar.css';
+import Button from '../components/UIElements/Button';
 
 let intervalId;
 
 const Progressbar = props => {
   const [progress, setProgress] = useState(props.startValue || 0);
 
+  // the restart state, to trigger useEffect 
+  const [restart, setRestart] = useState(0);
+
   const onComplete = props.onComplete;
+
+  const onClickHandler = () => {
+    setProgress(0);
+    setRestart(restart => 1 + restart);
+  }
+
 
   // we don't want progress to be the dependency of useEffect, 'cause that will call setInterval multiple times
   useEffect(() => {
@@ -30,7 +41,7 @@ const Progressbar = props => {
       clearInterval(intervalId);
     };
 
-  }, [onComplete]);
+  }, [onComplete, restart]);
 
   // can also write clearInterval and call onComplete here   
   // if (progress >= 100) {
@@ -55,6 +66,7 @@ const Progressbar = props => {
         >
         </div>
       </div>
+      <Button onClick={onClickHandler}>Restart + {restart}</Button>
     </React.Fragment>
   );
 
