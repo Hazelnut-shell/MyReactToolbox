@@ -2,23 +2,30 @@
     height: 20px;
     width: 500px;
     background-color: rgb(244, 244, 244);
-    border: 1px solid black;
     border-radius: 15px;
     overflow: hidden;
     text-align: center;
-    /*  */
-    position: relative;     
+
+    margin-top: 100px;
+
+    position: relative;     /* */
 }
 
 .percentage {
     width: 100%;
     height: 100%;
-    /*  */
-    position: absolute;
     z-index: 1;
+
+    /* to make itself */
+    position: absolute;
+
+    /* to make the number in it display in the middle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .bar {
     height: 100%;
-    background-color: rgb(102, 218, 122);
+    background-color: rgb(112, 214, 129);
 }

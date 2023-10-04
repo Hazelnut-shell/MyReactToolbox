@@ -1,0 +1,25 @@
+.circular.progressbar {
+    height: 375px;
+    width: 375px;
+    border-radius: 50%;
+
+    background: conic-gradient(rgb(112, 214, 129) 30deg, rgb(244, 244, 244) 30deg);
+
+    /* make .progressbar relative to center children, can also use flex */
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+.circular.progressbar>div:last-child {
+    width: 87%;
+    height: 87%;
+    background-color: white;
+    border-radius: 50%;
+
+    /* center in the parent div */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
